@@ -6,7 +6,10 @@ namespace CompositionExample
     {
         private static void Main(string[] args)
         {
-            Logger logger = new AlternativeLogger();
+
+            string path = "C:/dev/foo.txt";
+            Logger logger = new FileLogger(path);
+
             DbMigrator dbMigrator = new DbMigrator(logger);
             Installer installer = new Installer(logger);
 
